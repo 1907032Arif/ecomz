@@ -19,38 +19,37 @@
                          navigation</span><span class="navbar-toggler-icon"></span></button>
                  <div class="collapse navbar-collapse" id="navcol-3">
                      <ul class="navbar-nav mx-auto">
-                         <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                         <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                         <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
-                         <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
-                         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                         <li class="nav-item"><a class="nav-link active" href="{{ route('home') }}">Home</a></li>
+                         <li class="nav-item"><a class="nav-link" href="{{ route('shop') }}">Shop</a></li>
+                         <li class="nav-item"><a class="nav-link" href="{{ route('about.us') }}">About us</a></li>
+                         <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                      </ul>
 
                      <div class="nav-icons">
                          <ul>
                             @guest
-                            <li><a href="{{ route('login') }}" class="btn btn-success">Login </a> </li>
-                            <li><a href="{{ route('register') }}" class="btn btn-primary">Register </a></li>
+                            <li><a href="{{ route('login') }}" class="btn login-btn">Login </a> </li>
+                            <li><a href="{{ route('register') }}" class="btn register-btn">Register </a></li>
                             @endguest
-                          
+
                             @auth
                              <li>
                                  <div class="search position-relative">
                                      <span><i class="fas fa-search"></i></span>
                                      <div class="search-overlap">
                                      </div>
-                                     <form action="#" class="search-form position-fixed">
+                                     <form action="{{ route('search') }}" class="search-form position-fixed" method="get">
                                          <div class="search-input ">
                                              <div class="search-close">
                                                  <span>X</span>
                                              </div>
-                                             <input type="text" placeholder="Enter your keywords.....">
+                                             <input type="search" placeholder="Enter your keywords....." name="search"/>
                                          </div>
                                      </form>
                                  </div>
                              </li>
-                             <li><a href="my_wishlist.html"><i class="fas fa-shopping-cart"></i>
-                                     <span class="badge badge-pink ">1</span>
+                             <li><a href="{{ route('your.cart') }}"><i class="fas fa-shopping-cart"></i>
+                                     @if($cartProducts > 0) <span class="badge badge-pink ">{{ $cartProducts }}</span> @endif
                                  </a>
 
                                  <div class="product-on-sale pb-30">

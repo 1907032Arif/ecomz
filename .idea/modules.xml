@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ecom.iml" filepath="$PROJECT_DIR$/.idea/ecom.iml" />
+      <module fileurl="file://C:/Program Files/Xammp/htdocs/wordpress/.idea/wordpress.iml" filepath="C:/Program Files/Xammp/htdocs/wordpress/.idea/wordpress.iml" />
     </modules>
   </component>
 </project>

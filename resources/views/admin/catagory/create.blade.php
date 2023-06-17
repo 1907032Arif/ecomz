@@ -14,7 +14,7 @@
 <div class="row-fluid sortable">
 <div class="box span12">
         <div class="box-header" data-original-title>
-   
+
 
             <p class="alert-success">
                 <?php
@@ -26,15 +26,15 @@
                 }
                 ?>
             </p>
-            <h2><i class="halflings-icon edit"></i><span class="break"></span>Add Category</h2>     
-            
+            <h2><i class="halflings-icon edit"></i><span class="break"></span>Add Category</h2>
+
         </div>
 
-   
+
 
     <div class="box-content">
         <form class="form-horizontal" action="{{ url('catagories/') }}" method="post" enctype="multipart/form-data">
-           @csrf  
+           @csrf
             <fieldset>
                 <div class="control-group">
                     <label class="control-label" for="date01">Category Name</label>
@@ -59,6 +59,12 @@
                     </div>
                 </div>
 
+                <div class="control-group">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Make it Popular?</label>
+                    <div class="form-check form-switch controls">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="checkbox" value="1">
+                    </div>
+                </div>
 
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Add Category</button>
@@ -69,6 +75,6 @@
     </div>
 </div><!--/span-->
 </div><!--/row-->
-</div><!--/row--> 
+</div><!--/row-->
 
 @endsection

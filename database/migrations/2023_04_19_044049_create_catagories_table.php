@@ -19,6 +19,7 @@ class CreateCatagoriesTable extends Migration
             $table->string('description');
             $table->string('image');
             $table->boolean('status')->default(1);
+            $table->boolean('is_popular')->default(0);
             $table->timestamps();
         });
     }

@@ -31,7 +31,7 @@ $(document).ready(function(){
 					seconds = String(seconds).length >= 2 ? seconds : "0" + seconds
 				}
 				//
-				
+
 				if(!isNaN(eventDate)){
 					thisEl.find(".days").text(days);
 					thisEl.find(".hours").text(hours );
@@ -57,22 +57,19 @@ $(document).ready(function(){
 			interval = setInterval(i, 1e3)
 		}
 	})(jQuery);
+
+    function e(){
+        var e = new Date;
+        e.setDate(e.getDate() + 60);
+        dd = e.getDate();
+        mm = e.getMonth() + 1;
+        y = e.getFullYear();
+        futureFormattedDate = mm + "/" + dd + "/" + y;
+        return futureFormattedDate
+    }
 	//
-	$(document).ready(function(){
-		function e(){
-			var e = new Date;
-			e.setDate(e.getDate() + 60);
-			dd = e.getDate();
-			mm = e.getMonth() + 1;
-			y = e.getFullYear();
-			futureFormattedDate = mm + "/" + dd + "/" + y;
-			return futureFormattedDate
-		}
-		//
-		$("#countdown").countdown({
-			date: "29 November 2021 23:59:59", // change date/time here - do not change the format!
-			format: "on"
-		});
-	});
+
 });
+
+
 

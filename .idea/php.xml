@@ -118,6 +118,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="C:/Program Files/Xammp/htdocs/wordpress/wp-content/plugins/ai-generated-post/vendor/composer" />
+      <path value="C:/Program Files/Xammp/htdocs/wordpress/wp-content/plugins/ai-generated-post/vendor/orhanerday/open-ai" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

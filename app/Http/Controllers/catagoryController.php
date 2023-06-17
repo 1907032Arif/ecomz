@@ -40,10 +40,18 @@ class catagoryController extends Controller
     public function store(Request $request)
     {
         //
-        $catagory = new catagory; 
+        $catagory = new catagory;
         $catagory->id = $request->catagory;
         $catagory->name = $request->name;
         $catagory->description = $request->description;
+        $checked = $request->checkbox;
+        if ($checked){
+            $catagory->is_popular = 1;
+        }else {
+            $catagory->is_popular = 0;
+        }
+
+
 
         if($request->hasFile('image'))
         {
@@ -75,7 +83,7 @@ class catagoryController extends Controller
         }
         return redirect()->back()->with('message', "Status changed successfully");
     }
- 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -100,12 +108,20 @@ class catagoryController extends Controller
     $validatedData = $request->validate([
         'name' => 'required|string|max:255',
         'description' => 'nullable|string',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'checkbox' => 'accepted'
     ]);
 
     // Update model
     $catagory->name = $validatedData['name'];
     $catagory->description = $validatedData['description'];
+
+    $checked = $validatedData['checkbox'];
+    if ($checked){
+        $catagory->is_popular = 1;
+    }else {
+        $catagory->is_popular = 0;
+    }
 
     if ($request->hasFile('image')) {
         $file = $request->file('image');
@@ -122,7 +138,7 @@ class catagoryController extends Controller
     }
 }
 
-    
+
     /**
      * Remove the specified resource from storage.
      *

@@ -15,7 +15,7 @@
 <div class="row-fluid sortable">
 <div class="box span12">
         <div class="box-header" data-original-title>
-   
+
 
             <p class="alert-success">
                 <?php
@@ -27,15 +27,15 @@
                 }
                 ?>
             </p>
-            <h2><i class="halflings-icon edit"></i><span class="break"></span>Edit Category</h2>     
-            
+            <h2><i class="halflings-icon edit"></i><span class="break"></span>Edit Category</h2>
+
         </div>
 
-   
+
 
     <div class="box-content">
         <form class="form-horizontal" action="{{ url('catagories/'.$catagory->id) }}" method="post" enctype="multipart/form-data">
-           @csrf  
+           @csrf
            @method('PUT')
             <fieldset>
                 <div class="control-group">
@@ -58,6 +58,21 @@
                     <label class="control-label">File Upload</label>
                     <div class="controls">
                         <input type="file" name="image">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Make it Popular?</label>
+                    <div class="form-check form-switch controls">
+                        @php
+                        if ($catagory->is_popular == 1){
+                            $checked = "checked";
+                        }else {
+                             $checked = "";
+                        }
+
+                         @endphp
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="checkbox" {{ $checked }} >
                     </div>
                 </div>
 

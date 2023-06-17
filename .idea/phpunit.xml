@@ -3,6 +3,10 @@
   <component name="PHPUnit">
     <option name="directories">
       <list>
+        <option value="C:/Program Files/Xammp/htdocs/wordpress/wp-includes/sodium_compat/tests" />
+        <option value="C:/Program Files/Xammp/htdocs/wordpress/wp-content/themes/beehive/includes/sass-compiler/tests" />
+        <option value="C:/Program Files/Xammp/htdocs/wordpress/wp-includes/sodium_compat/tests" />
+        <option value="C:/Program Files/Xammp/htdocs/wordpress/wp-content/themes/beehive/includes/sass-compiler/tests" />
         <option value="$PROJECT_DIR$/tests/Unit" />
         <option value="$PROJECT_DIR$/tests/Feature" />
       </list>

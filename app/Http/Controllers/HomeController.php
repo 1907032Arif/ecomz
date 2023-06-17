@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
+use App\Models\catagory;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Tests\Integration\Database\EloquentHasManyThroughTest\Category;
+use Spatie\Ignition\Tests\TestClasses\Models\Car;
 
 class HomeController extends Controller
 {
@@ -28,14 +33,22 @@ class HomeController extends Controller
             return redirect()->route('admin.home');
         }elseif(Auth::user() -> role == 'user'){
             return redirect()->route('user.home');
-        }else{
-            return redirect()->route('guest.home');
         }
     }
 
-    public function guestHome()
+    public function home()
     {
-        return view('pages.home');
+        $categories = catagory::where('is_popular', 1)->take(3)->get();
+        $featuredProducts= Product::where('is_featured', 1)->get();
+        $instaProducts = Product::where('instagram_url', '!=' , '')->where('today_deals', null)->take(4)->orderBy('created_at', 'desc')->get();
+        $todayDeals = Product::where('today_deals', '!=', '')->orderBy('created_at', 'desc')->first();
+        $cartProducts = Cart::count();
+
+        $productCategory = catagory::has('product')->take(5)->get();
+        $catProduct= Product::whereIn('cat_id', $productCategory->pluck('id'))->get();
+
+
+        return view('pages.home', compact('categories','productCategory','catProduct', 'featuredProducts', 'instaProducts', 'todayDeals', 'cartProducts'));
     }
 
     public function adminHome()
@@ -46,5 +59,33 @@ class HomeController extends Controller
       public function userHome()
     {
         return view('pages.home');
+    }
+
+    public  function  aboutUS(){
+        $cartProducts = Cart::count();
+        return view('pages.about-us', compact('cartProducts'));
+    }
+
+    public function contact(){
+        $cartProducts = Cart::count();
+        return view('pages.contact', compact('cartProducts'));
+    }
+
+    public function search(Request $request){
+        $terms = $request->input('search');
+
+
+        if ($terms){
+            $products = Product::where(function ($query) use ($terms) {
+                $query->where('name', 'LIKE', "%{$terms}%")
+                    ->orWhere('description', 'LIKE', "%{$terms}%");
+            })->get();
+
+        }else {
+            $products = Product::orderBy('created_at', 'desc')->get();
+        }
+
+        $cartProducts = Cart::count();
+        return view('pages.search', compact('products', 'cartProducts'));
     }
 }
