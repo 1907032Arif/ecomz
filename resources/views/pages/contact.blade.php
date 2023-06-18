@@ -10,13 +10,13 @@
                 <div class="col-xl-12">
                     <div class="page-titel-detalis  ">
                         <div class="section-title">
-                            <h2>404</h2>
+                            <h2>Contact</h2>
                         </div>
                         <div class="page-bc">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item position-relative active" aria-current="page"><a href="404.html">404</a>
+                                    <li class="breadcrumb-item position-relative active" aria-current="page"><a href="#">Contact</a>
                                     </li>
                                 </ol>
                             </nav>
@@ -88,33 +88,34 @@
                     </div>
                 </div>
             </div>
-            <form class="contact-form pt-25 text-center" action="#">
+            <form class="contact-form pt-25 text-center" action="https://formspree.io/f/xnqyegdo" method="post">
+                @csrf
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                         <div class="contact-input">
-                            <input type="text" placeholder="Enter your name">
+                            <input type="text" placeholder="Enter your name" name="name">
                         </div>
 
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                         <div class="contact-input mt-15 mb-15 mt-sm-0 mb-sm-0">
-                            <input type="text" placeholder="Your Email">
+                            <input type="text" placeholder="Your Email" name="email">
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                         <div class="contact-input">
-                            <input type="text" placeholder="Subject">
+                            <input type="text" placeholder="Subject" name="subject">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="contact-input mt-30">
-                            <textarea  cols="30" rows="10" placeholder="Your message here"></textarea>
+                            <textarea  cols="30" rows="10" placeholder="Your message here" name="message"></textarea>
                         </div>
                     </div>
                 </div>
-                <button class="p-btn border-0 mt-75">Send To US</button>
+                <button class="p-btn border-0 mt-75" type="submit">Send To US</button>
             </form>
         </div>
     </div>

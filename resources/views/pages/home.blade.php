@@ -25,7 +25,7 @@
                         <div class="slider-image-bg">
                             <img src="{{ asset('products') . "/". $post->image }}" alt="shoes">
                             <span class="slider-price-badge">
-                <span>{{ $post->offer_price ?? $post->regular_price }}</span>
+                <span>{{ "$".$post->offer_price ?? $post->regular_price }}</span>
               </span>
 
                         </div>
@@ -51,7 +51,7 @@
                         </div>
                         <div class="category-texts ">
                             <span>Popular</span>
-                            <h3><a href="shop_grid.html">{{ $categories[0]['name'] }}</a></h3>
+                            <h3><a href="{{ route('shop') }}">{{ $categories[0]['name'] }}</a></h3>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                             <img src="{{ $assetPath . $categories[1]['image'] }}" alt="img2">
                         </div>
                         <div class="category-texts position-absolute">
-                            <h3><a href="shop_grid.html">{{ $categories[1]['name'] }}</a></h3>
+                            <h3><a href="{{ route('shop') }}">{{ $categories[1]['name'] }}</a></h3>
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@
                             <img src="{{ $assetPath . $categories[2]['image'] }}" alt="img3">
                         </div>
                         <div class="category-texts position-absolute">
-                            <h3><a href="shop_grid.html">{{ $categories[2]['name'] }}</a></h3>
+                            <h3><a href="{{ route('shop') }}">{{ $categories[2]['name'] }}</a></h3>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                                     <img src="{{ asset('products') . "/". $product->image }}" alt="bag">
                                 </div>
                                 <div class="arrival-details position-relative pt-25">
-                                    <h5><a href="shop_detalis.html"></a></h5>
+                                    <h5><a href="{{ route('shop.single',['id'=> $product->id]) }}">{{ $product->name }}</a></h5>
                                     <ul class="rating">
                                         @for($i=1; $i< $product->rating; $i++)
                                             <li><i class="las la-star"></i></li>
@@ -164,6 +164,7 @@
             $regular = $todayDeals->regular_price ;
             $offer = $todayDeals->offer_price ?? 0;
             $discount = ceil((($regular -$offer) * 100 ) / $regular);
+            $date = $todayDeals->today_deals;
  @endphp
               <div class="row">
                 <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12">
@@ -172,9 +173,9 @@
                         <h2>{{ $todayDeals->name }}</h2>
                         <div class="price">
                             <del class="mr-5">{{ "$" .$todayDeals->regular_price }}</del>
-                            <span>{{ $todayDeals->offer_price }}</span>
+                            <span>{{ "$" . $todayDeals->offer_price }}</span>
                         </div>
-                        <p class="pr-90">{{ "$" . $todayDeals->description }}</p>
+                        <p class="pr-90">{{  $todayDeals->description }}</p>
                         <div id="countdown" class="d-flex pb-40">
                             <div class="cd-box d-flex">
                                 <div class="d-inline-block">
@@ -224,91 +225,8 @@
     </div>
     @endif
     <!-- Today Deal Area Ends -->
-    <!-- News Area Start -->
-    <div class="news-area pt-115">
-        <div class="container">
-            <div class="section-title text-center pb-45">
-                <h2 class="text-uppercase">LATEST NEWS</h2>
-            </div>
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-4">
-                    <div class="news-items mb-30 mb-md-0">
-                        <div class="news-img">
-                            <a href="blog.html"><img src="img/blog/01.png" alt="img1"></a>
-                        </div>
-                        <div class="news-details pt-20">
-                            <div class="news-title pr-50">
-                                <a href="news_detalis.html">Lorem Ipsum has been the industry
-                                    sed do tempor tara</a>
-                            </div>
-                            <span class="d-block">Jan 21, 2021 By Admin</span>
-                            <a class="slider-btn d-inline-block position-relative mt-10" href="news_detalis.html">Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 ml-30 mr-60 ">
-                    <div class="news-items mb-30 mb-md-0">
-                        <div class="news-img">
-                            <a href="blog.html"><img src="img/blog/02.png" alt="img1"></a>
-                        </div>
-                        <div class="news-details pt-20">
-                            <div class="news-title pr-50">
-                                <a href="news_detalis.html">Lorem Ipsum has been the industry
-                                    sed do tempor tara</a>
-                            </div>
-                            <span class="d-block">Jan 21, 2021 By Admin</span>
-                            <a class="slider-btn d-inline-block position-relative mt-10" href="news_detalis.html">Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-4 pl-xl-0 pr-xl-0 ">
-                    <div class="news-items">
-                        <div class="news-img">
-                            <a href="blog.html"><img src="img/blog/03.png" alt="img1"></a>
-                        </div>
-                        <div class="news-details pt-20">
-                            <div class="news-title ">
-                                <a href="news_detalis.html">Lorem Ipsum has been the industry
-                                    sed do tempor tara</a>
-                            </div>
-                            <span class="d-block">Jan 21, 2021 By Admin</span>
-                            <a class="slider-btn d-inline-block position-relative mt-10" href="news_detalis.html">Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- News Area Ends  -->
 
-    <!-- Subscribe Area Starts -->
-
-    <div class="subscribe-area pt-115">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                    <div class="section-title ">
-                        <h2 class="text-uppercase">stay connected</h2>
-                    </div>
-                    <p class="pr-120">Subscribe to our newsleter and stay up to date with
-                        latest offers and upcoming trends.</p>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                    <form class="subscribe-form mt-40" action="#">
-                        <input type="email" placeholder="Email Address">
-                        <i class="las la-envelope"></i>
-                        <button>SUBSCRIBE</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scribe Area Ends -->
 
     <!-- Instagram Area Starts -->
     <div class="instagram-area pt-110 pb-120">

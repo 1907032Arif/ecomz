@@ -10,13 +10,13 @@
                 <div class="col-xl-12">
                     <div class="page-titel-detalis  ">
                         <div class="section-title">
-                            <h2>404</h2>
+                            <h2>About Us</h2>
                         </div>
                         <div class="page-bc">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item position-relative active" aria-current="page"><a href="404.html">404</a>
+                                    <li class="breadcrumb-item position-relative active" aria-current="page"><a href="#">About us</a>
                                     </li>
                                 </ol>
                             </nav>

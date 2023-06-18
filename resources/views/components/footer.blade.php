@@ -6,7 +6,7 @@
           <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6">
             <div class="footer-widget mb-30 mb-lg-0 pt-15">
               <div class="logo pb-30">
-                <a href="index.html"><img src="img/logo/logo.png" alt="img"></a>
+                <a href="{{ route('home') }}"><img src="img/logo/logo.png" alt="img"></a>
               </div>
               <div class="footer-info">
                 <ul>
@@ -27,12 +27,11 @@
             <div class="footer-widget mb-30 mb-lg-0">
               <h4>About Us</h4>
               <ul class="footer-info pt-10">
-                <li><a class="slider-btn position-relative d-inline-block" href="about_us.html">Our Outlets</a></li>
-                <li><a class="slider-btn position-relative d-inline-block" href="about_us.html">Sales and Retails</a>
+                <li><a class="slider-btn position-relative d-inline-block" href="{{ route('about.us') }}">Our Outlets</a></li>
+                <li><a class="slider-btn position-relative d-inline-block" href="{{ route('about.us') }}">Sales and Retails</a>
                 </li>
-                <li><a class="slider-btn position-relative d-inline-block" href="about_us.html">Areas we serve</a></li>
-                <li><a class="slider-btn position-relative d-inline-block" href="about_us.html">Career at aruk</a></li>
-                <li><a class="slider-btn position-relative d-inline-block" href="contact_page.html">Contact Us</a></li>
+                <li><a class="slider-btn position-relative d-inline-block" href="{{ route('about.us') }}">Areas we serve</a></li>
+                <li><a class="slider-btn position-relative d-inline-block" href="{{ route('contact') }}">Contact Us</a></li>
               </ul>
             </div>
           </div>
@@ -40,13 +39,11 @@
             <div class="footer-widget">
               <h4>Help and Support</h4>
               <ul class="footer-info pt-10">
-                <li><a class="slider-btn position-relative d-inline-block" href="about_us.html">Track my order</a></li>
-                <li><a class="slider-btn position-relative d-inline-block" href="about_us.html">Our top products</a>
+                <li><a class="slider-btn position-relative d-inline-block" href="{{ route('shop') }}">Our top products</a>
                 </li>
-                <li><a class="slider-btn position-relative d-inline-block" href="shopping_cart.html">My cart</a></li>
-                <li><a class="slider-btn position-relative d-inline-block" href="about_us.html">Sign in</a></li>
-                <li><a class="slider-btn position-relative d-inline-block" href="checkout_page.html">Shipping
-                    Calculator</a></li>
+                <li><a class="slider-btn position-relative d-inline-block" href="{{ route('your.cart') }}">My cart</a></li>
+                <li><a class="slider-btn position-relative d-inline-block" href="{{ route('login') }}">Sign in</a></li>
+
               </ul>
             </div>
           </div>
@@ -54,10 +51,8 @@
             <div class="footer-widget">
               <h4>Pages & Resources</h4>
               <ul class="footer-info pt-10">
-                <li><a class="slider-btn position-relative d-inline-block" href="about_us.html">About Us</a></li>
-                <li><a class="slider-btn position-relative d-inline-block" href="shop_grid.html">Shop Page</a></li>
-                <li><a class="slider-btn position-relative d-inline-block" href="shop_grid.html">Category page</a></li>
-                <li><a class="slider-btn position-relative d-inline-block" href="about_us.html">Sign in page</a></li>
+                <li><a class="slider-btn position-relative d-inline-block" href="{{ route('about.us') }}">About Us</a></li>
+                <li><a class="slider-btn position-relative d-inline-block" href="{{ route('shop') }}">Shop Page</a></li>
                 <li><a class="slider-btn position-relative d-inline-block" href="404.html">404 page</a></li>
               </ul>
             </div>
@@ -70,8 +65,8 @@
         <div class="row">
           <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12 order-md-2 order-lg-1">
             <div class="copyright mt-15">
-              <p>Copyright © 2020 | Designed by <a href="https://themeforest.net/user/wpsmasher"
-                  target="_blank">Wpsmasher</a></p>
+              <p>Copyright © 2020 | Designed by <a href="https://borhanularif"
+                  target="_blank">BorhanUlArif</a></p>
             </div>
 
           </div>

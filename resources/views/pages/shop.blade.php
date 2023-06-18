@@ -262,6 +262,7 @@
                         quantity : quantity
                     },
                     success: function (res) {
+                        window.location.reload()
 
                         console.log(res.status);
 

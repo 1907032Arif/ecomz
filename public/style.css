@@ -1736,6 +1736,7 @@ hr {
 
 .insta-imgs img {
     width: 100%;
+    height: 100%;
 }
 
 .insta-imgs:hover::before {
