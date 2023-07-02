@@ -365,6 +365,14 @@
 							</ul>
 						</li>
                         <li>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet">Post</span><span class="label label-important"> 3 </span></a>
+							<ul>
+								<li><a class="submenu" href="{{ route('post.create') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Post</span></a></li>
+								<li><a class="submenu" href="{{ route('post.index') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Posts</span></a></li>
+
+							</ul>
+						</li>
+                        <li>
                             <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet">Pages</span></a>
                             <ul>
                                 <li><a class="submenu" href="{{ route('about.create') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> About us</span></a></li>

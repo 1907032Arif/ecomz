@@ -34,27 +34,12 @@
     <div class="shop-details pt-120 ">
         <div class="container">
             <div class="row">
-                <div class="col-xl-1 col-lg-1 col-md-2 col-sm-12">
-                    <div class="nav nav-tabs " id="approach-tabs" role="tablist">
-                        <a class="product-thumb mb-15 active" id="nav-thumb1" data-bs-toggle="tab" href="#nav-product1" role="tab"
-                           aria-controls="nav-product1" aria-selected="true"><img src="img/products/24.png" alt="img"></a>
-                        <a class="product-thumb mb-15" id="nav-thum2" data-bs-toggle="tab" href="#nav-product2" role="tab"
-                           aria-controls="nav-product2" aria-selected="false"><img src="img/products/25.png" alt="img"></a>
-                        <a class="product-thumb" id="nav-thumb3" data-bs-toggle="tab" href="#nav-product3" role="tab"
-                           aria-controls="nav-product3" aria-selected="false"><img src="img/products/26.png" alt="img"></a>
-                    </div>
-                </div>
+
                 <div class="col-xl-11 col-lg-11 col-md-10 col-sm-12">
                     <div class="product-wrapper d-flex">
                         <div class="product-imges tab-content" id="nav-tabContents">
                             <div class="tab-pane product-img  active " id="nav-product1" role="tabpanel" aria-labelledby="nav-thumb1">
                                 <img src="{{ asset('products') . "/" . $product->image }}" alt="img">
-                            </div>
-                            <div class="tab-pane product-img " id="nav-product2" role="tabpanel" aria-labelledby="nav-thum2">
-                                <img src="img/products/32.png" alt="img">
-                            </div>
-                            <div class="tab-pane product-img" id="nav-product3" role="tabpanel" aria-labelledby="nav-thumb3">
-                                <img src="img/products/33.png" alt="img">
                             </div>
                         </div>
                         <div class="product-details ml-50">
@@ -231,6 +216,7 @@
                     success: function (res) {
 
                         console.log(res.status);
+                        window.location.href = res.status;
 
                     },
                     error: function(xhr, status, error) {

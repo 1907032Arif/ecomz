@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\catagory;
+use App\Models\Post;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -91,12 +92,22 @@ class HomeController extends Controller
     }
 
     public  function  aboutUS(){
-        $cartProducts = Cart::count();
+        $cartProducts = 0;
+        if (Auth::check())
+        {
+            $user = Auth::user();
+            $cartProducts = Cart::where('user_id', $user->id)->count();
+        }
         return view('pages.about-us', compact('cartProducts'));
     }
 
     public function contact(){
-        $cartProducts = Cart::count();
+        $cartProducts = 0;
+        if (Auth::check())
+        {
+            $user = Auth::user();
+            $cartProducts = Cart::where('user_id', $user->id)->count();
+        }
         return view('pages.contact', compact('cartProducts'));
     }
 
@@ -114,7 +125,28 @@ class HomeController extends Controller
             $products = Product::orderBy('created_at', 'desc')->get();
         }
 
-        $cartProducts = Cart::count();
-        return view('pages.search', compact('products', 'cartProducts'));
+        $cartProducts = 0;
+        if (Auth::check())
+        {
+            $user = Auth::user();
+            $cartProducts = Cart::where('user_id', $user->id)->count();
+        }
+
+        return view('pages.search', compact('products', 'cartProducts', 'terms'));
     }
+
+    public function blog(){
+        $cartProducts = 0;
+        if (Auth::check())
+        {
+            $user = Auth::user();
+            $cartProducts = Cart::where('user_id', $user->id)->count();
+        }
+
+        $posts = Post::orderBy('created_at', 'desc')->get();
+
+        return view('pages.blog', compact('posts', 'cartProducts'));
+    }
+
+
 }

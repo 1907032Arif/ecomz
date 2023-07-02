@@ -6,7 +6,7 @@
           <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6">
             <div class="footer-widget mb-30 mb-lg-0 pt-15">
               <div class="logo pb-30">
-                <a href="{{ route('home') }}"><img src="img/logo/logo.png" alt="img"></a>
+                <a href="{{ route('home') }}"><img src="{{ asset('img/logo/logo.png') }}" alt="img"></a>
               </div>
               <div class="footer-info">
                 <ul>

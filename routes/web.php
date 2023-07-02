@@ -37,6 +37,9 @@ Route::get('/cat-status{catagory}', [catagoryController::class, 'change_status']
 Route::resource('/sub-catagories', SubCatagoryController::class);
 Route::get('/cat-status{subcatagory}', [SubCatagoryController::class, 'change_status']);
 
+//Post
+Route::resource('/post', \App\Http\Controllers\PostController::class);
+
 
 
 
@@ -83,6 +86,11 @@ Route::get('/your-cart', [\App\Http\Controllers\CartController::class, 'viewCart
 Route::post('cart/delete', [\App\Http\Controllers\CartController::class, 'deleteCart']);
 Route::put('cart/update', [\App\Http\Controllers\CartController::class, 'updateCart']);
 Route::post('cart/clear', [\App\Http\Controllers\CartController::class, 'clearCart']);
+
+Route::get('blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
+Route::get('post/details/{id}', [App\Http\Controllers\PostController::class, 'postDetails'])->name('post.details');
+Route::post('post/comment', [App\Http\Controllers\PostController::class, 'comment'])->name('post.comment');
+
 
 
 //Route::get('checkout', [\App\Http\Controllers\OrderController::class, 'checkout']);

@@ -6,6 +6,7 @@ use App\Models\Cart;
 use DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use Illuminate\Support\Facades\DB;
 use Spatie\Ignition\Tests\TestClasses\Models\Car;
 
 class SslCommerzPaymentController extends Controller

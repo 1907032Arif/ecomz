@@ -33,7 +33,16 @@
     <!-- new arrival area starts -->
     <div class="new-arrival shop-grid pt-110 ">
         <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {!!  "You searched for: ". '<strong>' .$terms . '</strong>' !!}
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
             <div class="arrival-product new-arrival-2 position-relative pt-45">
+
                 <div class="row">
                     @if($products)
 

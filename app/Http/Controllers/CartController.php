@@ -23,20 +23,25 @@ class CartController extends Controller
                 $cart->product_id = $product_id;
                 $cart->quantity = $quantity;
                 $cart->save();
-                return response()->json(['status' => 'Product added to cart.']);
+                return response()->json(['status' => '/your-cart']);
             }else {
-                return response()->json(['status' => 'Product already added to cart.']);
+                return response()->json(['status' => '/your-cart']);
             }
 
         }else {
-            return response()->json(['status' => 'Login first please.']);
+            return response()->json(['status' => '/register']);
         }
 
     }
 
     public function viewCart(){
         $carts = Cart::where('user_id', Auth::id())->get();
-        $cartProducts = Cart::count();
+        $cartProducts = 0;
+        if (Auth::check())
+        {
+            $user = Auth::user();
+            $cartProducts = Cart::where('user_id', $user->id)->count();
+        }
         return view('pages.cart', compact('carts', 'cartProducts'));
     }
 

@@ -105,7 +105,7 @@
         <div class="container pt-50">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="coupon_discount">
+                    <div class="coupon_discount d-none">
                         <h6>Counpon discount</h6>
                         <p>Enter your code if you have one. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae</p>
                         <form action="#" class="coupon-form pt-25">
